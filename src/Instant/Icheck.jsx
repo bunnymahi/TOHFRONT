@@ -16,7 +16,7 @@ const Icheck = () => {
     formData.append("image", image);
 
     try {
-      const response = await axios.post("http://localhost:8000/CheckUp", formData, {
+      const response = await axios.post("https://fbend-ir1f.onrender.com/CheckUp", formData, {
         headers: {
           "content-Type": "multipart/form-data",
         },

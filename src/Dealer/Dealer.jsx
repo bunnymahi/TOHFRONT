@@ -8,7 +8,7 @@ const Dealer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/getdb");
+        const response = await fetch("https://fbend-ir1f.onrender.com/getdb");
         const result = await response.json();
         setData(result);
       } catch (error) {

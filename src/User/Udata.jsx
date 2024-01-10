@@ -12,7 +12,7 @@ function Udata() {
 
     // Fetch data from the server for the specific registration number
     axios
-      .get("http://localhost:8000/search", {
+      .get("https://fbend-ir1f.onrender.com/search", {
         params: {
           registrationNumber: registrationNumber,
         },

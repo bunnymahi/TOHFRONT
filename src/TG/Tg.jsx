@@ -18,7 +18,7 @@ const Tg = () => {
     console.log("Registration Number:", Rn);
     try {
       const response = await axios.post(
-        "http://localhost:8000/uploads",
+        "https://fbend-ir1f.onrender.com/uploads",
         formData,
         {
           headers: {
