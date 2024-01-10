@@ -31,7 +31,7 @@ const Tg = () => {
     } catch (error) {
       console.error("Error uploading image:", error);
     }
-  };
+  };  
   const PnumUpdate = (e) => {
     console.log(e.target.value);
     setPn(e.target.value);
@@ -41,18 +41,11 @@ const Tg = () => {
     console.log(e.target.value);
     setRn(e.target.value);
   };
-  // const uploadImage = (e) => {
-  //   console.log(e);
-  //   console.log(e.target.files[0]);
-  //   setImage(e.target.files[0]);
-  // };
   const [imageSelected, setImageSelected] = useState(false);
-
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
     if (e.target.files.length > 0) {
       console.log(e.target.files[0]);
-
       setImageSelected(true);
     }
   };

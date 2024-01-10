@@ -9,6 +9,7 @@ import Feedback from "./Home/Feedback";
 import About from "./Home/About";
 import ContactUs from "./Home/ContacUs";
 import HomePage from "./Home/HomePage";
+import Home from "./Home/Home";
 import Dealer from "./Dealer/Dealer";
 import Icheck from "./Instant/Icheck";
 
@@ -17,7 +18,7 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<TA/>}/>
         <Route path="/tollplaza" element={<Tg/>}/>
         <Route path="/User-data" element={<Udata/>}/>
@@ -29,7 +30,6 @@ function App() {
         <Route path="/Homepage" element={<HomePage/>}/>
         <Route path="/Dealer" element={<Dealer/>}/>
         <Route path="/CheckupNow" element={<Icheck/>}/>
-
       </Routes>
     </Router>
   );
