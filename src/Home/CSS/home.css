@@ -23,4 +23,12 @@
     /* color: #ffffff; */
 
 }
-
+.nav-link:hover {
+    color: #e9ebec; /* Change color on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+  .nav-link.active {
+    color: #f3f3f3; /* Change color of active link */
+    font-weight: bold; /* Make active link bold */
+  }
+  

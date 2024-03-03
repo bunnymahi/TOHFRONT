@@ -1,45 +1,48 @@
+
 import React from "react";
 import "./CSS/home.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Fc from "../User/Fc";
 
 const Home = () => {
   return (
-    <div className="box ">
-      <div className="row">
-        <div className="col-sm-4 mb-3 mb-sm-0">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">TOLL PLAZA</h5>
-              <Link to="/login" className="btn btn-danger">
-                Go somewhere
-              </Link>
+    <>
+      <div className="box">
+        <div className="row g-3">
+          <div className="col-md-4 mb-3">
+            <div className="card h-100 d-flex flex-column">
+              <div className="card-body d-flex flex-column align-items-center">
+                <h5 className="card-title">Toll plaza</h5>
+                <Link to="/tollplaza" className="btn btn-danger">
+                  Click here!!!
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">USER</h5>
-              {/* <a href="/getdb" className="btn btn-danger"> */}
-              <Link to="/Udata" className="btn btn-danger">
-
-                Go somewhere
-              </Link>
+          <div className="col-md-4 mb-3">
+            <div className="card h-100 d-flex flex-column">
+              <div className="card-body d-flex flex-column align-items-center">
+                <h5 className="card-title">Reports</h5>
+                <Link to="/User-data" className="btn btn-danger">
+                  Click here!!!
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">DEALER</h5>
-              <Link to="/getdb" className="btn btn-danger">
-                Go somewhere
-              </Link>
+          <div className="col-md-4 mb-3">
+            <div className="card h-100 d-flex flex-column">
+              <div className="card-body d-flex flex-column align-items-center">
+                <h5 className="card-title">Dealer</h5>
+                <Link to="/Dealer" className="btn btn-danger">
+                  Click here!!!
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <Fc />
+    </>
   );
 };
 

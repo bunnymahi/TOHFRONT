@@ -1,51 +1,11 @@
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import Navbar from "react-bootstrap/Navbar";
 
-// const Navbar = () => {
-//   return (
-//     <nav className="navbar fixed-top navbar-expand-lg bg-danger " data-bs-theme="dark">
-//       <div className="container-fluid">
-//         <Link className="navbar-brand" to="/">
-//           TOH
-//         </Link>
-//         <button
-//           className="navbar-toggler"
-//           type="button"
-//           data-bs-toggle="collapse"
-//           data-bs-target="#navbarNavAltMarkup"
-//           aria-controls="navbarNavAltMarkup"
-//           aria-expanded="false"
-//           aria-label="Toggle navigation"
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-//           <div className="navbar-nav">
-//             <Link className="nav-link active" aria-current="page" to="/">
-//               Home
-//             </Link>
-//             <Link className="nav-link" to="/about">
-//               About
-//             </Link>
-//             <Link className="nav-link" to="/contact">
-//               Contact
-//             </Link>
-//             <Link className="nav-link" to="/feedback">
-//               Feedback
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   )
-// };
-
-// export default Navbar;
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button"
+import "./CSS/home.css";
 const AppNavbar = () => {
   const [expanded, setExpanded] = useState(false);
 
@@ -59,7 +19,7 @@ const AppNavbar = () => {
       expand="lg"
       fixed="top"
     >
-      <Navbar.Brand as={Link} to="/" onClick={closeNavbar}>
+      <Navbar.Brand as={NavLink} to="/" onClick={closeNavbar}>
         TOH
       </Navbar.Brand>
       <Navbar.Toggle
@@ -68,27 +28,32 @@ const AppNavbar = () => {
       />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/" onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/" onClick={closeNavbar}>
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to="/about" onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/about" onClick={closeNavbar}>
             About
           </Nav.Link>
-          <Nav.Link as={Link} to="/contactus" onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/contactus" onClick={closeNavbar}>
             Contact
           </Nav.Link>
-          <Nav.Link as={Link} to="/feedback" onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/feedback" onClick={closeNavbar}>
             Feedback
           </Nav.Link>
-          <Nav.Link as={Link} to="/tollplaza" onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/tollplaza" onClick={closeNavbar}>
             Tollguy
           </Nav.Link>
-          <Nav.Link as={Link} to="/Udata"onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/User-data" onClick={closeNavbar}>
             CheckReports
           </Nav.Link>
-          <Nav.Link as={Link} to="/Dealer" onClick={closeNavbar}>
+          <Nav.Link as={NavLink} to="/Dealer" onClick={closeNavbar}>
             Dealer
           </Nav.Link>
+          <Nav.Link as={NavLink} to="/admin" onClick={closeNavbar}>
+            Admin
+          </Nav.Link>
+        </Nav>
+        <Nav className="ml-auto">
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -1,12 +1,36 @@
-import React from "react";
-import "./CSS/home.css";
+import React, { useState } from "react";
+import axios from "axios";
 import "./CSS/home.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import './Feedback.css';  // Import the CSS file where you define the styles
 
 const Feedback = () => {
+  const [email, setEmail] = useState("");
+  const [feedback, setFeedback] = useState("");
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/feedback", // Replace with your actual backend API endpoint
+        { email, feedback }
+      );
+
+      console.log("Feedback submitted:", response.data);
+
+      // Clear the fields
+      setEmail("");
+      setFeedback("");
+
+      // You can handle success feedback or redirection here
+    } catch (error) {
+      console.error("Error submitting feedback:", error);
+      // You can handle error feedback here
+    }
+  };
+
   return (
     <div
       style={{
@@ -29,10 +53,9 @@ const Feedback = () => {
           >
             <h1 className="text-center">Provide Your Feedback</h1>
             <p className="lead text-center">
-              We value your feedback! Your insights help us improve our services and make your experience
-              on Telangana's highways Safer.
+              We value your feedback! Your insights help us improve our services and make your experience on highways Safer.
             </p>
-            <form>
+            <form onSubmit={submitForm}>
               <div className="mb-3">
                 <label htmlFor="exampleFormControlInput1" className="form-label">
                   Email address:
@@ -42,18 +65,25 @@ const Feedback = () => {
                   className="form-control"
                   id="exampleFormControlInput1"
                   placeholder="name@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleFormControlTextarea1" className="form-label">
-                  Example textarea
+                  Feedback:
                 </label>
                 <textarea
                   className="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
                   placeholder="Enter feedback here!!"
+                  value={feedback}
+                  onChange={(e) => setFeedback(e.target.value)}
                 ></textarea>
+                <button type="submit" className="btn btn-danger mt-3">
+                  SUBMIT
+                </button>
               </div>
             </form>
           </Col>

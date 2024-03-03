@@ -6,14 +6,14 @@ import Col from 'react-bootstrap/Col';
 
 const ContactUs = () => {
   return (
-    // <div className="fbox d-flex align-items-center justify-content-center">
-    <div style={{
+    <div
+      style={{
         backgroundColor: "#f8f9fa",
         minHeight: "100vh",
         padding: "20px",
       }}
-      className="mt-5">
-      
+      className="mt-5"
+    >
       <Container>
         <Card>
           <Card.Body>
@@ -24,16 +24,20 @@ const ContactUs = () => {
             </p>
 
             <Row className="mb-3">
-              <Col>Email:</Col>
               <Col>
-                email address
+                <i className="bi bi-envelope-fill"></i> Email: Toh@gmail.com
               </Col>
+              {/* <Col>
+                email address
+              </Col> */}
             </Row>
 
             <Row className="mb-3">
-              <Col>Phone:</Col>
               <Col>
-                toll-free number
+                <i className="bi bi-telephone-fill"></i> Phone: 0000-0000-00
+              </Col>
+              <Col>
+                {/* toll-free number */}
               </Col>
             </Row>
             <hr />
@@ -42,17 +46,29 @@ const ContactUs = () => {
 
             <Row className="mb-3">
               <Col>
-                Send us a message on social media:{""}
+                Send us a message on social media:
               </Col>
             </Row>
             <Row>
-            <a href="https://www.instagram.com">Instagram</a>
+              <Col>
+                <a href="https://www.instagram.com">
+                  <i className="bi bi-instagram"></i> Instagram
+                </a>
+              </Col>
             </Row>
             <Row>
-            <a href="https://www.facebook.com">Facebook</a>
+              <Col>
+                <a href="https://www.facebook.com">
+                  <i className="bi bi-facebook"></i> Facebook
+                </a>
+              </Col>
             </Row>
             <Row>
-            <a href="https://twitter.com/">X</a>
+              <Col>
+                <a href="https://twitter.com/">
+                <i class="bi bi-twitter-x"></i> Twitter
+                </a>
+              </Col>
             </Row>
           </Card.Body>
         </Card>
